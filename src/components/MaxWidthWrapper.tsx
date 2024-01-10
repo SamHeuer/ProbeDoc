@@ -1,4 +1,4 @@
-import { cn } from "@/lib/util";
+import { cn } from "@/lib/utils";
 import React from "react";
 import { ReactNode } from "react";
 function MaxWidthWrapper({
