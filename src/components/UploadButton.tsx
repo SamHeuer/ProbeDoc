@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { Button } from "./ui/button";
 
+import UploadDropzone from "./UploadDropzone";
+
 function UploadButton() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -21,7 +23,9 @@ function UploadButton() {
       >
         <Button>Upload Button</Button>
       </DialogTrigger>
-      <DialogContent></DialogContent>
+      <DialogContent>
+        <UploadDropzone />
+      </DialogContent>
     </Dialog>
   );
 }
