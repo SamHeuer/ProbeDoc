@@ -78,6 +78,7 @@ function PdfRenderer({ url }: pdfRendererProps) {
               setCurrPage((prev) => {
                 return prev > 2 ? prev - 1 : 1;
               });
+              setValue("page", String(currPage - 1));
             }}
           >
             <ChevronDown className="h-4 w-4" />
@@ -109,6 +110,7 @@ function PdfRenderer({ url }: pdfRendererProps) {
               setCurrPage((prev) => {
                 return prev > numPages! - 1 ? numPages! : prev + 1;
               });
+              setValue("page", String(currPage + 1));
             }}
           >
             <ChevronUp className="h-4 w-4" />
