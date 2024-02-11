@@ -27,6 +27,7 @@ import {
 } from "./ui/dropdown-menu";
 
 import SimpleBar from "simplebar-react";
+import PdfFullscreen from "./PdfFullscreen";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -37,7 +38,7 @@ interface pdfRendererProps {
 function PdfRenderer({ url }: pdfRendererProps) {
   const { toast } = useToast();
   const { width, ref } = useResizeDetector();
-  const [numPages, setNumPages] = useState<number>();
+  const [numPages, setNumPages] = useState<number>(1);
   const [currPage, setCurrPage] = useState<number>(1);
   const [scale, setScale] = useState<number>(1);
   const [rotation, setRotation] = useState<number>(0);
@@ -145,6 +146,8 @@ function PdfRenderer({ url }: pdfRendererProps) {
           >
             <RotateCw className="h-4 w-4" />
           </Button>
+
+          <PdfFullscreen fileUrl={url} />
         </div>
       </div>
       <div className="flex-1 w-full max-h-screen">
